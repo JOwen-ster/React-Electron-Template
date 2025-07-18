@@ -1,6 +1,7 @@
 {
     "appId": "com.template.app",
     "files": ["dist-electron", "dist-react"],
+    "icon": "./icon.png",
     "win": {
         "target": [
             "portable",

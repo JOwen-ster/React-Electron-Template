@@ -1,10 +1,14 @@
-import {app, BrowserWindow} from "electron";
+import { app, BrowserWindow } from "electron";
 import { join } from "path";
+import isDev from "./check-development.js";
 
 app.on("ready", () => {
-    const mainWidow = new BrowserWindow({
-        
-    });
-    mainWidow.loadFile(join(app.getAppPath(), "/dist-react/index.html"));
-});
+    const mainWindow = new BrowserWindow({
 
+    });
+    if ( isDev() ) {
+        mainWindow.loadURL("htpps://localhost:8000")
+    } else {
+        mainWindow.loadFile(join(app.getAppPath(), "/dist-react/index.html"));
+    }
+});
