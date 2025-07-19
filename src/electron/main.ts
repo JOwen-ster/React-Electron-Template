@@ -1,14 +1,18 @@
 import { app, BrowserWindow } from "electron";
 import { join } from "path";
-import isDev from "./check-development.js";
 
 app.on("ready", () => {
     const mainWindow = new BrowserWindow({
-
+        
     });
-    if ( isDev() ) {
-        mainWindow.loadURL("htpps://localhost:8000")
+    mainWindow.removeMenu(); // Linux and Windows top menu bar
+    if ( process.env.NODE_ENV == 'development' ) {
+        mainWindow.loadURL("http://localhost:8000"); // use vite server for HMR
     } else {
-        mainWindow.loadFile(join(app.getAppPath(), "/dist-react/index.html"));
+        mainWindow.loadFile(join(app.getAppPath(), "/dist-react/index.html")); // use files from SSG
     }
+});
+
+app.on('window-all-closed', () => {
+    app.quit();
 });

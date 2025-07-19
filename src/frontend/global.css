@@ -35,6 +35,28 @@ h1 {
   line-height: 1.1;
 }
 
+h1 > strong.react {
+  color: #58c4dc
+}
+
+h1 > strong.electron {
+  background: linear-gradient(135deg, #2f3349 0%, #47518b 50%, #9146ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+h1 > strong.vite {
+  background: linear-gradient(135deg, #bd34fe 0%, #41d1ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+h1 > strong.typescript {
+  color: #3178c6;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;

@@ -67,3 +67,5 @@ export default tseslint.config([
   },
 ])
 ```
+
+Update electron-builder.json with more config settings such as change install location, desktop shortvut, and un install all appdata to leave no trace.
