@@ -4,6 +4,14 @@ import "./App.css";
 
 function App() {
   const [count, setCount] = useState(0);
+  
+  // preloaded
+  // can be used with no error or warning since we setup types using types.d.ts
+  // and used satisfy in preload.cts
+  console.log(window.versions.node_version);
+  console.log(window.versions.electron_version);
+  console.log(window.versions.chrome_version);
+  console.log(window.message.getMessage().message);
 
   return (
     <>
